@@ -32,7 +32,7 @@ export class BookListComponent  implements OnInit {
   }
 
   updateBook(id: number){
-    this.router.navigate(['book-employee', id]);
+    this.router.navigate(['update-book', id]);
   }
 
   deleteBook(id: number){
