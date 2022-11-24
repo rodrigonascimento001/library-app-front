@@ -19,21 +19,21 @@
                     </div>
 
                     <div class="form-group">
-                        <label>price</label>
+                        <label>description</label>
                         <input type="text" class="form-control" id="description" [(ngModel)]="book.description"
                             name="description">
                     </div>
 
                     <div class="form-group">
-                        <label>price</label>
+                        <label>pages</label>
                         <input type="text" class="form-control" id="pages" [(ngModel)]="book.pages"
                             name="pages">
                     </div>
 
                     <div class="form-group">
-                        <label> Email Id</label>
-                        <input type="text" class="form-control" id="path" [(ngModel)]="book.pathImage"
-                            name="path">
+                        
+                            <label for="profileImage">Upload Image</label>  
+                            <input type="file" name="imgBook" (change)="onImageUpload($event)">
                     </div>
  
                     <br />

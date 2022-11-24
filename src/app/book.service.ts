@@ -15,9 +15,9 @@ export class BookService {
   getBooksList(): Observable<Book[]>{
     return this.httpClient.get<Book[]>(`${this.baseURL}`);
   }
-
-  createBook(book: Book): Observable<Object>{
-    return this.httpClient.post(`${this.baseURL}`, book);
+ 
+  createBook(formData: FormData): Observable<Object>{
+    return this.httpClient.post(`${this.baseURL}`, formData);
   }
 
   getBookById(id: number): Observable<Book>{

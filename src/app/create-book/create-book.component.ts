@@ -9,16 +9,27 @@ import { BookService } from '../book.service';
   styleUrls: ['./create-book.component.css']
 })
 export class CreateBookComponent  implements OnInit {
-
+  uploadedImage!: File;
   book: Book = new Book();
   constructor(private bookService: BookService,
     private router: Router) { }
-
+ 
   ngOnInit(): void {
   }
 
+  public onImageUpload(event ) {
+    this.uploadedImage = event.target.files[0];
+  }
+  
   saveBook(){
-    this.bookService.createBook(this.book).subscribe( data =>{
+    const imageFormData = new FormData();
+    imageFormData.append('image', this.uploadedImage, this.uploadedImage.name);
+    imageFormData.append('name',this.book.name);
+    imageFormData.append('price',this.book.price as unknown as Blob);
+    imageFormData.append('pages',this.book.pages as unknown as Blob);
+    imageFormData.append('description',this.book.description);
+  
+    this.bookService.createBook(imageFormData).subscribe( data =>{
       console.log(data);
       this.goToBookList();
     },
