@@ -30,18 +30,5 @@ export class BookListComponent  implements OnInit {
   bookDetails(id: number){
     this.router.navigate(['book-details', id]);
   }
-
-  updateBook(id: number){
-    this.router.navigate(['update-book', id]);
-  }
-
-  deleteBook(id: number){
-    this.bookService.deleteBook(id).subscribe( data => {
-      console.log(data);
-      this.getBooks();
-    })
-  }
-
-
-
+ 
 }
