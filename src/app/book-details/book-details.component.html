@@ -1,0 +1,24 @@
+<h3> View Book Details</h3>
+<div>
+    <div>
+        <label> <b>Name: </b></label> {{book.name}}
+    </div>
+    <div>
+        <label> <b>Price: </b></label> {{book.price}}
+    </div>
+    <div>
+        <label> <b>Pages: </b></label> {{book.pages}}
+    </div>
+    <div>
+        <label> <b>Description: </b></label> {{book.description}}
+    </div>
+    <div>
+           <img   src="{{ book.pathImage }}"  class="img-rounded" alt="Cinque Terre" width="304" height="236" >
+    </div>
+    <div>
+    <br>
+        <button (click) = "updateBook(book.id)" class = "btn btn-primary"> Update</button>
+        <button (click) = "deleteBook(book.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+
+    </div>
+</div>

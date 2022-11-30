@@ -1,0 +1,21 @@
+<div class = "row">
+    <h2> Book List</h2>
+</div>
+<div class="row">
+      
+    <div class="col-sm-3"  *ngFor = "let book of books">
+        
+        <div   class="card bg-light">
+            <img   src="{{ book.pathImage }}" >
+            <div class="card-body">
+              <h5 class="card-title">{{book.name}}</h5>
+              <p class="card-text"> {{book.description}}</p> 
+              <p class="card-text"> R$ {{book.price}}</p>
+                <button (click) = "bookDetails(book.id)" class = "btn btn-primary" style="margin-left: 10px"> View</button>
+            </div>
+             
+        </div>
+    </div>
+     
+</div>
+ 
