@@ -8,7 +8,7 @@ import { Book } from './book';
 })
 export class BookService {
 
-  private baseURL = "http://ec2-3-89-255-49.compute-1.amazonaws.com:8081/api/v1/books";
+  private baseURL = "http://ec2-3-93-162-74.compute-1.amazonaws.com:8081/api/v1/books";
 
   constructor(private httpClient: HttpClient) { }
 
